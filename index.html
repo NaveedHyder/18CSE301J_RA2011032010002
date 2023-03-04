@@ -1,63 +1,416 @@
 <!DOCTYPE html>
-<html>
-<head>
-	<title>INFORMATION VISUALISATION</title>
-	<style>
-		body {
-			background-color: rgb(255, 255, 255);
-			color: rgb(35, 35, 35);
-			font-size: 24px;
-			text-align: center;
-			margin: 0;
-			padding: 0;
-		}
-	</style>
-</head>
-<body><center>	
-	<h1 style="font-family: Arial, sans-serif;">INFORMATION VISUALISATION</h1>
-	<p style="font-family: Arial, sans-serif;">Welcome to my Information Disualization-18CSE301J course project page !</p>
-	<h4 style="float: left; padding-left: 150px;">Project 1 </h4>
-	<div style="border: 2px solid black;padding-top: 100px;">
-		<div class='tableauPlaceholder' id='viz1677573491993' style='position: relative'>
-			<noscript>
-				<a href='#'>
-					<img alt='Dashboard 1' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;St&#47;StoreSalesAnalysis_16775015765700&#47;Dashboard1&#47;1_rss.png' style='border: none' />
-				</a>
-			</noscript>
-			<object class='tableauViz' style='display:none;'>
-				<param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
-				<param name='embed_code_version' value='3' />
-				<param name='site_root' value='' />
-				<param name='name' value='StoreSalesAnalysis_16775015765700&#47;Dashboard1' />
-				<param name='tabs' value='no' />
-				<param name='toolbar' value='yes' />
-				<param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;St&#47;StoreSalesAnalysis_16775015765700&#47;Dashboard1&#47;1.png' />
-				<param name='animate_transition' value='yes' />
-				<param name='display_static_image' value='yes' />
-				<param name='display_spinner' value='yes' />
-				<param name='display_overlay' value='yes' />
-				<param name='display_count' value='yes' />
-				<param name='language' value='en-US' />
-			</object>
-		</div>
-		<script type='text/javascript'>
-			var divElement = document.getElementById('viz1677573491993');
-			var vizElement = divElement.getElementsByTagName('object')[0];
-			if (divElement.offsetWidth > 800) {
-				vizElement.style.width = '1000px';
-				vizElement.style.height = '827px';
-			} else if (divElement.offsetWidth > 500) {
-				vizElement.style.width = '1000px';
-				vizElement.style.height = '827px';
-			} else {
-				vizElement.style.width = '100%';
-				vizElement.style.height = '1777px';
-			}
-			var scriptElement = document.createElement('script');
-			scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
-			vizElement.parentNode.insertBefore(scriptElement, vizElement);
-		</script>
-	</div>
-</center></body>	
+<html lang="en">
+   <head>
+      <!-- basic -->
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <!-- mobile metas -->
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+      <!-- site metas -->
+      <title>Data visualization</title>
+      <meta name="keywords" content="">
+      <meta name="description" content="">
+      <meta name="author" content="">
+      <!-- bootstrap css -->
+      <link rel="stylesheet" href="css/bootstrap.min.css">
+      <!-- style css -->
+      <link rel="stylesheet" href="css/style.css">
+      <!-- Responsive-->
+      <link rel="stylesheet" href="css/responsive.css">
+      <!-- fevicon -->
+      <link rel="icon" href="images/fevicon.png" type="image/gif" />
+      <!-- Scrollbar Custom CSS -->
+      <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">
+      <!-- Tweaks for older IEs-->
+      <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
+      <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
+   </head>
+   <!-- body -->
+   <body class="main-layout">
+      <!-- loader  -->
+      <div class="loader_bg">
+         <div class="loader"><img src="images/loading.gif" alt="#" /></div>
+      </div>
+      <!-- end loader -->
+      <div id="mySidepanel" class="sidepanel">
+         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+         <a href="index.html">Home</a>
+         <a href="#about">Tableau</a>
+         <a href="#software">Gephi</a>
+         <a href="#team">Python</a>
+         <a href="#testimonial">D3</a>
+         <a href="#contact">Contact</a>
+      </div>
+      <!-- header -->
+      <header>
+         <!-- header inner -->
+         <div class="header">
+            <div class="container-fluid">
+               <div class="row">
+                  <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4">
+                  </div>
+                  <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col logo_section">
+                     <div class="full">
+                        <div class="center-desk">
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4">
+                     <div class="right_bottun">
+                        <button class="openbtn" onclick="openNav()"><img src="images/menu_icon.png" alt="#"/> </button> 
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </header>
+      <!-- end header inner -->
+      <!-- end header -->
+      <!-- banner -->
+      <section class="banner_main">
+         <div id="banner1" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+               <li data-target="#banner1" data-slide-to="0" class="active"></li>
+               <li data-target="#banner1" data-slide-to="1"></li>
+            </ol>
+            <div class="carousel-inner">
+               <div class="carousel-item active">
+                  <div class="container">
+                     <div class="carousel-caption">
+                        <div class="text-bg">
+                           <h1>Data</h1>
+                           <span>visualization</span>
+                           <a class="read_more" href="https://github.com/NaveedHyder/Data-Visualisation-18CSE301J.git">Explore Github</a>
+                           
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="carousel-item">
+                  <div class="container">
+                     <div class="carousel-caption">
+                        <div class="text-bg">
+                           <h1>18CSE301J</h1>
+                           <span>Data visualization project page</span>
+                           <a class="read_more" href="https://github.com/NaveedHyder/Data-Visualisation-18CSE301J.git">Explore Github</a>
+                           
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            
+         </div>
+      </section>
+      <!-- end banner -->
+      <!-- about section -->
+      <div id="about" class="about">
+         <div class="container">
+            <div class="row ">
+               <div class="col-md-12">
+                  <div class="row">
+                     <div class="col-md-12">
+                        <div class="titlepage">
+                           <h2>Data visualization using Tableau</h2>
+                           <p> The Tableau project analyzed the performance of a store chain in the United States by examining the profits and number of sales across different regions and locations. The project utilized visualizations to display the data in an easy-to-understand format and to identify trends and patterns in the data. <br>
+                              The project began by collecting and cleaning the data on the profits and sales of the store chain across different regions and locations. Using Tableau, the data was then visualized and analyzed to understand the performance of the stores.
+                              The analysis of the data revealed significant differences in profits and sales across regions and locations. The project identified the best-performing regions and locations, which helped the store chain to make data-driven decisions about resource allocation and strategic planning.
+                               The Tableau project provided an in-depth analysis of the store chain's performance and helped identify areas for improvement. The project demonstrated the value of data analysis and visualization in making informed business decisions.
+                           </p>
+                           <h1 class='tableauPlaceholder' id='viz1677573491993' style='position: relative'>
+                              <noscript>
+                                 <a href='#'>
+                                    <img alt='Dashboard 1' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;St&#47;StoreSalesAnalysis_16775015765700&#47;Dashboard1&#47;1_rss.png' style='border: none' />
+                                 </a>
+                              </noscript>
+                              <object class='tableauViz' style='display:none;'>
+                                 <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+                                 <param name='embed_code_version' value='3' />
+                                 <param name='site_root' value='' />
+                                 <param name='name' value='StoreSalesAnalysis_16775015765700&#47;Dashboard1' />
+                                 <param name='tabs' value='no' />
+                                 <param name='toolbar' value='yes' />
+                                 <param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;St&#47;StoreSalesAnalysis_16775015765700&#47;Dashboard1&#47;1.png' />
+                                 <param name='animate_transition' value='yes' />
+                                 <param name='display_static_image' value='yes' />
+                                 <param name='display_spinner' value='yes' />
+                                 <param name='display_overlay' value='yes' />
+                                 <param name='display_count' value='yes' />
+                                 <param name='language' value='en-US' />
+                              </object>
+                           </h1>
+                           <script type='text/javascript'>
+                                 var divElement = document.getElementById('viz1677573491993');
+                                 var vizElement = divElement.getElementsByTagName('object')[0];
+                                 if (divElement.offsetWidth > 800) {
+                                    vizElement.style.width = '1000px';
+                                    vizElement.style.height = '827px';
+                                 } else if (divElement.offsetWidth > 500) {
+                                    vizElement.style.width = '1000px';
+                                    vizElement.style.height = '827px';
+                                 } else {
+                                    vizElement.style.width = '100%';
+                                    vizElement.style.height = '1777px';
+                                 }
+                                 var scriptElement = document.createElement('script');
+                                 scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+                                 vizElement.parentNode.insertBefore(scriptElement, vizElement);
+                           </script>
+                           <a class="read_more" href="https://github.com/NaveedHyder/Data-Visualisation-18CSE301J/tree/main/Tableau%20-%20Data%20Visualization">Get Files here <i class="fa fa-github" aria-hidden="true"></i></a>
+
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- about section -->
+      <!-- software section -->
+      <div class="software" id="software">
+         <div class="container-fluid">
+            <div class="row d_flex">
+               <div class="col-md-6">
+                  <div class="titlepage">
+                     <h2>GEPHI – Network Analysis and Visualization</h2>
+                     <p>A network is made of two components : a list of the actors composing the network, and a list of the relations (the interactions between actors).
+                        I have used two datasets (different data to explore different features).
+                        In our example, the attribute determines the colour of the nodes. The size of a node depends on the value of its “degree centrality” (its number of connexions). The centrality measures are essential metrics to analyze the position of an actor in a network.
+                         </p>
+                         <a class="read_more" href="https://github.com/NaveedHyder/Data-Visualisation-18CSE301J/tree/main/Gephi%20-%20Data%20Visualization">Get Files here <i class="fa fa-github" aria-hidden="true"></i></a>
+                  </div>
+               </div>
+               <div class="col-md-6 padding_right2">
+                  <div class="software_img">
+                     <figure><img src="images/gephii.png" alt="#"/></figure>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- software section -->
+      <!-- We Do section -->
+      <div id="we_Do" class="we_do">
+         <div class="container">
+            <div class="row">
+               <div class="col-md-12">
+                  <div class="titlepage">
+                     <h2>Representations</h2>
+                     <img src="/images/FR.png" alt="">
+                     <img src="/images/g1.png" alt="">
+                     <img src="/images/g2.png" alt="">
+                     <img src="/images/g3.png" alt="">
+                  </div>
+               </div>
+            </div>
+            <div class="col-md-12">
+               <a class="read_more" href="#software">Read More</a>
+            </div>
+         </div>
+      </div>
+      <!-- end We Do section -->
+      <!-- Our  team section -->
+      <div id="team" class="team">
+         <div class="container">
+            <div class="row">
+               <div class="col-md-12">
+                  <div class="titlepage">
+                     <h2>Data Visualization using Python</h2>
+                     <p>
+                        Python has several powerful libraries for data visualization, including Matplotlib, Seaborn, Plotly, and Bokeh. These libraries provide a variety of charts, graphs, and other visualizations to help users interpret and analyze their data.
+                        Matplotlib is a widely used library for creating static visualizations, such as line charts, scatter plots, and bar charts. Seaborn provides a higher-level interface to Matplotlib, with built-in styles and color palettes for creating more attractive and informative visualizations.                     
+                        <br><br>
+                         ~ import pandas as pd <br> 
+                        ~ import seaborn as sns <br>
+                        The two lines of code that import two Python libraries, pandas and seaborn.
+                        pandas is a popular open-source data analysis and manipulation library for Python. It provides various data structures and functions for working with tabular data, including reading and writing data in various formats, selecting and filtering data, and aggregating and transforming data.
+                        sns is an abbreviation for Seaborn, a Python data visualization library that is built on top of matplotlib. It provides a higher-level interface for creating visually appealing and informative statistical graphics.
+                        By importing these two libraries using the pd and sns aliases, respectively, you can then use their functions and methods in your Python code to analyze and visualize data in a more efficient and effective manner.
+                     </p>
+                     <a class="read_more" href="https://colab.research.google.com/drive/1E72TObwb9MjNJ1LSA9ytHp9wQGj14bUL?usp=sharing">Take me to Collab <i class="fa fa-google" aria-hidden="true"></i></a><br><br>
+                     <a class="read_more" href="https://github.com/NaveedHyder/Data-Visualisation-18CSE301J/tree/main/Python%20-%20Data%20Visualization">Get Files here <i class="fa fa-github" aria-hidden="true"></i></a>
+
+                     <h3>About the data : </h3>
+                     <p>
+                        This dataset contains information related to weather conditions recorded between May 18, 2017, and September 26, 2017, in a particular area. The dataset includes 14 columns, including date and time, air pollution index, humidity, wind speed and direction, visibility, temperature, rain and snowfall, cloudiness, weather type, and weather description. The air pollution index is measured in a range of 0-500, where higher values indicate greater levels of air pollution. The weather type column indicates the general weather condition (e.g., rain, mist, drizzle, etc.), while the weather description provides a more detailed description of the weather conditions. Additionally, the dataset includes information about whether the date and time correspond to a holiday. Overall, this dataset provides useful information for weather analysis and prediction in the area under consideration.
+                     </p>
+
+                     <h3>Representations : </h3>
+                  </div>
+               </div>
+            </div>
+            <div class="row">
+               <div class="col-md-4">
+                  <div class="team_box">
+                     <figure><img src="images/Py3.png" alt="#"/></figure>
+                  </div>
+               </div>
+               <div class="col-md-4">
+                  <div class="team_box">
+                     <figure><img src="images/Py2.png" alt="#"/></figure>
+                  </div>
+               </div>
+               <div class="col-md-4">
+                  <div class="team_box">
+                     <figure><img src="images/Py1.png" alt="#"/></figure>
+                  </div>
+               </div>
+               <div class="col-md-4">
+                  <div class="team_box">
+                     <figure><img src="images/Py4.png" alt="#"/></figure>
+                  </div>
+               </div>
+               <div class="col-md-4">
+                  <div class="team_box">
+                     <figure><img src="images/Py5.png" alt="#"/></figure>
+                  </div>
+               </div>
+               <div class="col-md-4">
+                  <div class="team_box">
+                     <figure><img src="images/Py6.png" alt="#"/></figure>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- end Our  team section -->
+      <!-- testimonial section -->
+      <div id="testimonial" class="testimonial">
+         <div class="container">
+            <div class="row">
+               <div class="col-md-12">
+                  <div class="titlepage">
+                     <h2>Data Visualization using D3.js</h2>
+                     <p>D3.js (Data-Driven Documents) is a powerful JavaScript library used for data visualization. It allows developers to create interactive and dynamic visualizations using HTML, CSS, and SVG. D3.js provides a wide range of data visualization tools and techniques, including bar charts, line graphs, scatterplots, and more.
+                        One of the key features of D3.js is its ability to bind data to DOM (Document Object Model) elements, allowing for data-driven updates to the visualization. This means that changes in the underlying data can automatically update the visualization, making it easy to keep your visualizations up-to-date with the latest data.
+                        D3.js also provides a robust set of tools for manipulating data and creating custom visualizations. This allows developers to create highly customized and unique visualizations that are tailored to the needs of their specific projects.</p>
+                  </div>
+               </div>
+            </div>
+            <div class="row">
+               <div class="col-md-12">
+                  <div id="myCarousel" class="carousel slide testimonial_Carousel " data-ride="carousel">
+                     <ol class="carousel-indicators">
+                        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                        <li data-target="#myCarousel" data-slide-to="1"></li>
+                        <li data-target="#myCarousel" data-slide-to="2"></li>
+                     </ol>
+                     <div class="carousel-inner">
+                        <div class="carousel-item active">
+                           <div class="container">
+                              <div class="carousel-caption ">
+                                 <div class="row">
+                                    <div class="col-md-12">
+                                       <div class="testimonial_box">
+                                          <h3>-<br><span class="blu">-</span></h3>
+                                          <p>-</p>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="carousel-item">
+                           <div class="container">
+                              <div class="carousel-caption">
+                                 <div class="row">
+                                    <div class="col-md-12">
+                                       <div class="testimonial_box">
+                                          <h3>-<br><span class="blu">-</span></h3>
+                                          <p>-</p>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="carousel-item">
+                           <div class="container">
+                              <div class="carousel-caption">
+                                 <div class="row">
+                                    <div class="col-md-12">
+                                       <div class="full cross_layout">
+                                          <div class="testimonial_box">
+                                             <h3>-<br><span class="blu">-</span></h3>
+                                          <p>-</p>
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+                     <i class='fa fa-angle-left'></i>
+                     </a>
+                     <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+                     <i class='fa fa-angle-right'></i>
+                     </a>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- end testimonial section -->
+      <!--  footer -->
+      <footer>
+         <div class="footer">
+            <div class="container">
+               <div class="row">
+                  <div class="col-md-2">
+                     <!-- <h3>Useful</h3>
+                     <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, </p> -->
+                  </div>
+                  <div class="col-md-4">
+                     <div class="fid_box">
+                        <h3>Find me  </h3>
+                        <ul class="location_icon">
+                           <li><a href="#"><i class="fa fa-map-marker" aria-hidden="true"></i></a><br> Abode valley Potheri <br> Chennai 602303</li>
+                           <li><a href="#"><i class="fa fa-phone" aria-hidden="true"></i></a><br>
+                              (+91) 9745109932
+                           </li>
+                           <li><a href="#"><i class="fa fa-envelope" aria-hidden="true"></i></a><br> naveedhyderhublot@gmail.com</li>
+                        </ul>
+                     </div>
+                  </div>
+                  <div class="col-md-4">
+                     <div class="fid_box">
+                        <ul class="social_icon">
+                           <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                           <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                           <li><a href="#"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a></li>
+                           <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                        </ul>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="copyright">
+               <div class="container">
+                  <div class="row">
+                     <div class="col-md-12">
+                        <p>© 2023 All Rights Reserved. Design by Naveed Hyder</p>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </footer>
+      <!-- end footer -->
+      <!-- Javascript files-->
+      <script src="js/jquery.min.js"></script>
+      <script src="js/popper.min.js"></script>
+      <script src="js/bootstrap.bundle.min.js"></script>
+      <script src="js/jquery-3.0.0.min.js"></script>
+      <!-- sidebar -->
+      <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+      <script src="js/custom.js"></script>
+
+   </body>
 </html>
 
