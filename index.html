@@ -60,7 +60,7 @@
                      </div>
                   </div>
                   <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4">
-<!--                      <div class="right_bottun">
+                     <!-- <div class="right_bottun">
                         <button class="openbtn" onclick="openNav()"><img src="images/menu_icon.png" alt="#"/> </button> 
                      </div> -->
                   </div>
@@ -200,10 +200,10 @@
                <div class="col-md-12">
                   <div class="titlepage">
                      <h2>Representations</h2>
-                     <img src="images/FR.png" alt="">
-                     <img src="images/g1.png" alt="">
-                     <img src="images/g2.png" alt="">
-                     <img src="images/g3.png" alt="">
+                     <img src="/images/FR.png" alt="">
+                     <img src="/images/g1.png" alt="">
+                     <img src="/images/g2.png" alt="">
+                     <img src="/images/g3.png" alt="">
                   </div>
                </div>
             </div>
@@ -288,70 +288,77 @@
                      <p>D3.js (Data-Driven Documents) is a powerful JavaScript library used for data visualization. It allows developers to create interactive and dynamic visualizations using HTML, CSS, and SVG. D3.js provides a wide range of data visualization tools and techniques, including bar charts, line graphs, scatterplots, and more.
                         One of the key features of D3.js is its ability to bind data to DOM (Document Object Model) elements, allowing for data-driven updates to the visualization. This means that changes in the underlying data can automatically update the visualization, making it easy to keep your visualizations up-to-date with the latest data.
                         D3.js also provides a robust set of tools for manipulating data and creating custom visualizations. This allows developers to create highly customized and unique visualizations that are tailored to the needs of their specific projects.</p>
+                        <br>
+                        <br>
+                        <h2>About the data</h2>
+                        <p>The dataset is a JSON object that represents a geographic feature. It contains a single feature with the following properties:
+                        <br>
+                        type: The type of feature, which in this case is "Feature".
+                        <br>
+                        properties: An object that contains a single property called "name", with a value of "Angola". This property describes the name of the geographic feature.
+                        <br>
+                        geometry: An object that describes the shape of the geographic feature. In this case, the feature is a MultiPolygon, which means it consists of multiple polygons. The coordinates property contains an array of coordinates that define the polygons that make up the feature.
+                        The coordinates array is a nested array that contains an array for each polygon that makes up the feature. Each polygon is defined by an array of coordinates, where each coordinate is represented as a two-element array that contains the latitude and longitude of the point. The coordinates are listed in a specific order, such that the first and last coordinates of each polygon are the same, creating a closed shape.
+                        <br>
+                     <a class="read_more1" href="https://gist.githubusercontent.com/d3indepth/3ccd770923a61f26f55156657e2f51e8/raw/9a33b25b8d6cfece3bc7ea5379c733709b00fbe1/africa.json">Go to the Dataset</a>
+                     <br>
+                     <a class="read_more1" href="https://github.com/NaveedHyder/Data-Visualisation-18CSE301J/tree/main/D3%20-%20Data%20Visualization">Get files here <i class="fa fa-github" aria-hidden="true"></i></a>
                   </div>
                </div>
             </div>
             <div class="row">
                <div class="col-md-12">
-                  <div id="myCarousel" class="carousel slide testimonial_Carousel " data-ride="carousel">
-                     <ol class="carousel-indicators">
-                        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                        <li data-target="#myCarousel" data-slide-to="1"></li>
-                        <li data-target="#myCarousel" data-slide-to="2"></li>
-                     </ol>
-                     <div class="carousel-inner">
-                        <div class="carousel-item active">
-                           <div class="container">
-                              <div class="carousel-caption ">
-                                 <div class="row">
-                                    <div class="col-md-12">
-                                       <div class="testimonial_box">
-                                          <h3>-<br><span class="blu">-</span></h3>
-                                          <p>-</p>
-                                       </div>
-                                    </div>
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-                        <div class="carousel-item">
-                           <div class="container">
-                              <div class="carousel-caption">
-                                 <div class="row">
-                                    <div class="col-md-12">
-                                       <div class="testimonial_box">
-                                          <h3>-<br><span class="blu">-</span></h3>
-                                          <p>-</p>
-                                       </div>
-                                    </div>
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-                        <div class="carousel-item">
-                           <div class="container">
-                              <div class="carousel-caption">
-                                 <div class="row">
-                                    <div class="col-md-12">
-                                       <div class="full cross_layout">
-                                          <div class="testimonial_box">
-                                             <h3>-<br><span class="blu">-</span></h3>
-                                          <p>-</p>
-                                          </div>
-                                       </div>
-                                    </div>
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                     <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
-                     <i class='fa fa-angle-left'></i>
-                     </a>
-                     <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
-                     <i class='fa fa-angle-right'></i>
-                     </a>
+
+                  <div>
+                     <div id="content">
+                        <div class="info">Hover over a country</div>
+                        <svg width="620px" height="600px">
+                            <g class="map"></g>
+                            <g class="bounding-box"><rect></rect></g>
+                            <g class="centroid"><circle r="4"></circle></g>
+                        </svg>
+                    </div>
+                    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.9.1/d3.min.js"></script>
+                    <script>                    
+                        var projection = d3.geoMercator()
+                            .scale(400)
+                            .translate([200, 280])
+                            .center([0, 5]);                   
+                        var geoGenerator = d3.geoPath()
+                            .projection(projection);                   
+                        function handleMouseover(d) {                
+                            var pixelArea = geoGenerator.area(d);
+                            var bounds = geoGenerator.bounds(d);
+                            var centroid = geoGenerator.centroid(d);
+                            var measure = geoGenerator.measure(d);                
+                            d3.select('#content .info')
+                                .text(d.properties.id + ' (path.area = ' + pixelArea.toFixed(1) + ' path.measure = ' + measure.toFixed(1) + ')');                  
+                            d3.select('#content .bounding-box rect')
+                                .attr('x', bounds[0][0])
+                                .attr('y', bounds[0][1])
+                                .attr('width', bounds[1][0] - bounds[0][0])
+                                .attr('height', bounds[1][1] - bounds[0][1]);                   
+                            d3.select('#content .centroid')
+                                .style('display', 'inline')
+                                .attr('transform', 'translate(' + centroid + ')');
+                        }
+                        function update(geojson) {
+                            var u = d3.select('#content g.map')
+                                .selectAll('path')
+                                .data(geojson.features);                   
+                            u.enter()
+                                .append('path')
+                                .attr('d', geoGenerator)
+                                .on('mouseover', handleMouseover);
+                        }
+                        // REQUEST DATA
+                        d3.json('https://gist.githubusercontent.com/d3indepth/3ccd770923a61f26f55156657e2f51e8/raw/9a33b25b8d6cfece3bc7ea5379c733709b00fbe1/africa.json', function(err, json) {
+                            update(json)
+                        })                   
+                    </script>
+
                   </div>
+                  
                </div>
             </div>
          </div>
