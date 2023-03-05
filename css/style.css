@@ -421,6 +421,33 @@ button {
      font-weight: bold;
      padding: 0;
 }
+.titlepage p {
+     font-size: 40px;
+     color: #2a2a2c;
+     line-height: 45px;
+     padding: 0;
+}
+.titlepage .read_more1{
+     font-size: 17px;
+     background-color: #000000;
+     color: #ffffff;
+     padding: 15px 0px;
+     width: 100%;
+     max-width: 198px;
+     text-align: center;
+     display: inline-block;
+     transition: ease-in all 0.5s;
+     font-weight: 500;
+     border-radius: 10px;
+     text-transform: uppercase;
+     margin-top: 30px;
+}
+
+.titlepage .read_more:hover {
+     background: #03cafc;
+     color: #fff !important;
+     transition: ease-in all 0.5s;
+}
 
 .d_flex {
      display: flex;
